@@ -3,8 +3,9 @@ using HandbookSystem.Helper;
 
 namespace HandbookSystem.Controllers
 {
-    public class HomeController : Controller
+    public class HandbookController : Controller
     {
+        // GET: Handbook
         public ActionResult Index()
         {
             // Person model

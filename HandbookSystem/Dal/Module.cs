@@ -23,6 +23,7 @@ namespace HandbookSystem.Dal
         public int ModuleCode { get; set; }
         public string ModuleTitle { get; set; }
         public byte ModuleYear { get; set; }
+        public bool Enabled { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> People { get; set; }

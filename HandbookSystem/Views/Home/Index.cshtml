@@ -1,18 +1,19 @@
 ﻿@model HandbookSystem.Dal.Person
+
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Welcome @Model.UserName, (Student)</h2>
+        <h2>Welcome @Model.UserName, (@Model.Role)</h2>
         <h3>Student Info</h3>
         <h4>Name: @Model.LastName, @Model.FirstName</h4>
         <h4>Course: @Model.Course</h4>
         <h4>Modules:</h4>
         <ul>
             @{
-                foreach (var module in ViewBag.Module)
+                foreach (var module in Model.Modules)
                 {
                     <li><h4>@module.ModuleTitle</h4></li>
                 }
@@ -22,7 +23,7 @@
         <h4>Download Handbook:</h4>
         <ul>
             @{
-                foreach (var module in ViewBag.Module)
+                foreach (var module in Model.Modules)
                 {
                     <li><h4><a href="#">@module.ModuleTitle</a></h4></li>
                 }
