@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using HandbookSystem.Helper;
+using HandbookSystem.Models;
 
 namespace HandbookSystem.Controllers
 {
@@ -24,12 +25,22 @@ namespace HandbookSystem.Controllers
         }
 
         // GET: Handbook/Edit/Id
-        public ActionResult Edit(string id)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
-            // Person model
-            var person = Query.PersonInfo();
+            var module = Query.ModuleInfo(id);
 
-            return View(person);
+            return View(module);
+        }
+
+        // POST: Handbook/Edit/Id
+        [HttpPost]
+        public ActionResult Edit(ModuleInfo moduleInfo)
+        {
+            // Save changes to the handbook
+            Query.EditHandbook(moduleInfo);
+
+            return View();
         }
     }
 }

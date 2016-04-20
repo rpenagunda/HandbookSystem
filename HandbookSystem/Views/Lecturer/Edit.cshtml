@@ -1,28 +1,161 @@
-﻿@{
+﻿@using HandbookSystem.Helper
+
+@model HandbookSystem.Models.ModuleInfo
+
+@{
     ViewBag.Title = "Edit Handbook";
 }
 
-@*<!-- START FORM -->
-@using (Html.BeginForm("Index", "Display", FormMethod.Post, new { @role = "form", @id = "frm_display" }))
-{
-    @Html.AntiForgeryToken()
+<div class="col-md-12">
+    <h2>@ViewBag.Title</h2>
+    <!-- START FORM -->
+    @using (Html.BeginForm("Edit", "Lecturer", FormMethod.Post, new { @role = "form", @id = "frm_handbook" }))
+    {
+        @Html.AntiForgeryToken()
 
-    <fieldset>
-        <legend class="h4">Fill in the information below to create the Handbook:</legend>
-        <!-- VALIDATION SUMMARY -->
-        $1$<div class="form-group h4">
-                @Html.ValidationSummary(false)
-            </div>#1#
-        <div>
-            <!-- ADDRESS -->
-            <div class="form-group">
-                @Html.LabelFor(model => model.Address)
-                @Html.EditorFor(model => model.Address, "TextArea")
-                @Html.ValidationMessageFor(model => model.Address)
+        <fieldset>
+            <legend class="h4">Fill in the information below to create the Handbook:</legend>
+            <!-- VALIDATION SUMMARY -->
+            @*<div class="form-group h4">
+                    @Html.ValidationSummary(false)
+                </div>*@
+            <div>
+                <!-- DEPARTMENT -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Department)
+                    @Html.TextBoxFor(model => model.Department, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.Department)
+                </div>
+
+                <!-- CREDIT -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Credits)
+                    @Html.TextBoxFor(model => model.Credits, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.Credits)
+                </div>
+
+                <!-- MODULE LEADER -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ModuleLeader)
+                    @Html.TextBoxFor(model => model.ModuleLeader, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.ModuleLeader)
+                </div>
+
+                <!-- MODULE LEADER PHONE -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ModuleLeaderPhone)
+                    @Html.TextBoxFor(model => model.ModuleLeaderPhone, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.ModuleLeaderPhone)
+                </div>
+
+                <!-- MODULE ROOM -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ModuleRoom)
+                    @Html.TextBoxFor(model => model.ModuleRoom, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.ModuleRoom)
+                </div>
+
+                <!-- MODULE LEADER EMAIL -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ModuleLeaderEmail)
+                    @Html.TextBoxFor(model => model.ModuleLeaderEmail, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.ModuleLeaderEmail)
+                </div>
+
+                <!-- ADMINISTRATOR PHONE -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdministratorPhone)
+                    @Html.TextBoxFor(model => model.AdministratorPhone, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.AdministratorPhone)
+                </div>
+
+                <!-- INCLUSIVE SERVICES -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InclusiveServices)
+                    @Html.EditorFor(model => model.InclusiveServices, "TextArea")
+                    @Html.ValidationMessageFor(model => model.InclusiveServices)
+                </div>
+
+                <!-- MODULE OVERVIEW -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ModuleOverview)
+                    @Html.EditorFor(model => model.ModuleOverview, "TextArea")
+                    @Html.ValidationMessageFor(model => model.ModuleOverview)
+                </div>
+
+                <!-- ADVICE -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Advice)
+                    @Html.EditorFor(model => model.Advice, "TextArea")
+                    @Html.ValidationMessageFor(model => model.Advice)
+                </div>
+
+                <!-- LEARNING OUTCOMES -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LearningOutcomes)
+                    @Html.EditorFor(model => model.LearningOutcomes, "TextArea")
+                    @Html.ValidationMessageFor(model => model.LearningOutcomes)
+                </div>
+
+                <!-- OUTLINE CONTENT -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OutlineContent)
+                    @Html.EditorFor(model => model.OutlineContent, "TextArea")
+                    @Html.ValidationMessageFor(model => model.OutlineContent)
+                </div>
+
+                <!-- VLE BLACKBOARD -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VleBlackboard)
+                    @Html.EditorFor(model => model.VleBlackboard, "TextArea")
+                    @Html.ValidationMessageFor(model => model.VleBlackboard)
+                </div>
+
+                <!-- ASSESMENT -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Assessment)
+                    @Html.EditorFor(model => model.Assessment, "TextArea")
+                    @Html.ValidationMessageFor(model => model.Assessment)
+                </div>
+
+                <!-- COURSEWORK -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Coursework)
+                    @Html.EditorFor(model => model.Coursework, "TextArea")
+                    @Html.ValidationMessageFor(model => model.Coursework)
+                </div>
+
+                <!-- READING LIST -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ReadingList)
+                    @Html.EditorFor(model => model.ReadingList, "TextArea")
+                    @Html.ValidationMessageFor(model => model.ReadingList)
+                </div>
+
+                <!-- OTHER INFO -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OtherInfo)
+                    @Html.EditorFor(model => model.OtherInfo, "TextArea")
+                    @Html.ValidationMessageFor(model => model.OtherInfo)
+                </div>
+
+                <!-- HIDDEN MODULE CODE -->
+                @Html.HiddenFor(model => model.ModuleCode)
             </div>
-        </div>
-    </fieldset>
+        </fieldset>
 
-    <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="submitDisplayForm()">SUBMIT DETAILS</button></p>
+        <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="submitHandbookForm()">SUBMIT CHANGES</button></p>
+    }
+    <!-- END FORM -->
+</div>
+
+<!-- START MODAL DIALOG -->
+<!-- Specify Criteria Modal -->
+@Html.GenerateModalDialog("modal_handbook_overlay", "<h3></h3>" +
+                                                "<h3>Submitting the changes..</h3>",null, "<p></p>")
+<!-- END MODAL DIALOG -->
+
+@section scripts {
+    <script src="@Url.Content("~/Scripts/Site.js")"></script>
+    <script src="@Url.Content("~/Scripts/edit.js")"></script>
 }
-<!-- END FORM -->*@
