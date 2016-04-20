@@ -24,6 +24,23 @@ namespace HandbookSystem.Dal
         public string ModuleTitle { get; set; }
         public byte ModuleYear { get; set; }
         public bool Enabled { get; set; }
+        public string Department { get; set; }
+        public string Credits { get; set; }
+        public string ModuleLeader { get; set; }
+        public string ModuleLeaderPhone { get; set; }
+        public string ModuleRoom { get; set; }
+        public string ModuleLeaderEmail { get; set; }
+        public string AdministratorPhone { get; set; }
+        public string InclusiveServices { get; set; }
+        public string ModuleOverview { get; set; }
+        public string Advice { get; set; }
+        public string LearningOutcomes { get; set; }
+        public string OutlineContent { get; set; }
+        public string VleBlackboard { get; set; }
+        public string Assessment { get; set; }
+        public string Coursework { get; set; }
+        public string ReadingList { get; set; }
+        public string OtherInfo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> People { get; set; }

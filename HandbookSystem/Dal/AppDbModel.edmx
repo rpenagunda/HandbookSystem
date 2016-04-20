@@ -13,6 +13,23 @@
           <Property Name="ModuleTitle" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ModuleYear" Type="tinyint" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Credits" Type="varchar" MaxLength="50" />
+          <Property Name="ModuleLeader" Type="varchar" MaxLength="50" />
+          <Property Name="ModuleLeaderPhone" Type="varchar" MaxLength="50" />
+          <Property Name="ModuleRoom" Type="varchar" MaxLength="50" />
+          <Property Name="ModuleLeaderEmail" Type="varchar" MaxLength="50" />
+          <Property Name="AdministratorPhone" Type="varchar" MaxLength="50" />
+          <Property Name="InclusiveServices" Type="text" />
+          <Property Name="ModuleOverview" Type="text" />
+          <Property Name="Advice" Type="text" />
+          <Property Name="LearningOutcomes" Type="text" />
+          <Property Name="OutlineContent" Type="text" />
+          <Property Name="VleBlackboard" Type="text" />
+          <Property Name="Assessment" Type="text" />
+          <Property Name="Coursework" Type="text" />
+          <Property Name="ReadingList" Type="text" />
+          <Property Name="OtherInfo" Type="text" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -89,6 +106,23 @@
           <Property Name="ModuleYear" Type="Byte" Nullable="false" />
           <NavigationProperty Name="People" Relationship="Self.PersonModule" FromRole="Module" ToRole="Person" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Credits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleLeader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleLeaderPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleLeaderEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdministratorPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InclusiveServices" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleOverview" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Advice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LearningOutcomes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OutlineContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VleBlackboard" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Assessment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Coursework" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReadingList" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OtherInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -125,6 +159,23 @@
           <EntitySetMapping Name="Modules">
             <EntityTypeMapping TypeName="AppDbModel.Module">
               <MappingFragment StoreEntitySet="Module">
+                <ScalarProperty Name="OtherInfo" ColumnName="OtherInfo" />
+                <ScalarProperty Name="ReadingList" ColumnName="ReadingList" />
+                <ScalarProperty Name="Coursework" ColumnName="Coursework" />
+                <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+                <ScalarProperty Name="VleBlackboard" ColumnName="VleBlackboard" />
+                <ScalarProperty Name="OutlineContent" ColumnName="OutlineContent" />
+                <ScalarProperty Name="LearningOutcomes" ColumnName="LearningOutcomes" />
+                <ScalarProperty Name="Advice" ColumnName="Advice" />
+                <ScalarProperty Name="ModuleOverview" ColumnName="ModuleOverview" />
+                <ScalarProperty Name="InclusiveServices" ColumnName="InclusiveServices" />
+                <ScalarProperty Name="AdministratorPhone" ColumnName="AdministratorPhone" />
+                <ScalarProperty Name="ModuleLeaderEmail" ColumnName="ModuleLeaderEmail" />
+                <ScalarProperty Name="ModuleRoom" ColumnName="ModuleRoom" />
+                <ScalarProperty Name="ModuleLeaderPhone" ColumnName="ModuleLeaderPhone" />
+                <ScalarProperty Name="ModuleLeader" ColumnName="ModuleLeader" />
+                <ScalarProperty Name="Credits" ColumnName="Credits" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
                 <ScalarProperty Name="Enabled" ColumnName="Enabled" />
                 <ScalarProperty Name="ModuleCode" ColumnName="ModuleCode" />
                 <ScalarProperty Name="ModuleTitle" ColumnName="ModuleTitle" />

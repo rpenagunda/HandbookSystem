@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\jebio\Documents\WORK\Trainground\HandbookSystem\HandbookSystem\Dal\AppDbModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Joen\Documents\Playground\HandbookSystem\HandbookSystem\Dal\AppDbModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

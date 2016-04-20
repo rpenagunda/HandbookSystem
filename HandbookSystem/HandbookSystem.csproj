@@ -129,8 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HandbookController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Dal\AppDbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,8 +226,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Handbook\Index.cshtml" />
+    <Content Include="Views\Lecturer\Edit.cshtml" />
+    <None Include="Views\Lecturer\Index.cshtml" />
+    <Content Include="Views\Lecturer\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

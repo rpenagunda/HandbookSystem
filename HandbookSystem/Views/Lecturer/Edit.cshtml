@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Edit Handbook";
+}
+
+@*<!-- START FORM -->
+@using (Html.BeginForm("Index", "Display", FormMethod.Post, new { @role = "form", @id = "frm_display" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend class="h4">Fill in the information below to create the Handbook:</legend>
+        <!-- VALIDATION SUMMARY -->
+        $1$<div class="form-group h4">
+                @Html.ValidationSummary(false)
+            </div>#1#
+        <div>
+            <!-- ADDRESS -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address)
+                @Html.EditorFor(model => model.Address, "TextArea")
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+    </fieldset>
+
+    <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="submitDisplayForm()">SUBMIT DETAILS</button></p>
+}
+<!-- END FORM -->*@
