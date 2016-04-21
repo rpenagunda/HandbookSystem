@@ -4,7 +4,7 @@
 $(document).ready(function () {
     // WYSIWYG EDITOR (TINYMCE)
     tinymce.init({
-        selector: 'textarea',
+        selector: '.auto-size-textarea',
         height: 500,
         plugins: [
           'advlist autolink lists link image charmap preview anchor',
@@ -19,7 +19,4 @@ $(document).ready(function () {
     /** SETTING ATTRIBUTE **/
     // Turn off autocomplete
     $(".val-autocomplete-off").attr("autocomplete", "off");
-
-    // Auto-size text-area
-    $('.auto-size-textarea').autosize({ append: "\n" });
 });
