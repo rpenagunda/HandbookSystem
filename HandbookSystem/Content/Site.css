@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -44,4 +43,16 @@ ul#module-download-list > li {
     width: 200px;
     height: 300px;
     padding: 20px;
+}
+
+#layout-header {
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    background-color: #052561;
+    height: 150px;
+}
+
+#layout-header a {
+    color: #fff !important;
+    font-size: 30px;
 }
