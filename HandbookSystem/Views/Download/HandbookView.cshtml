@@ -4,4 +4,76 @@
     Layout = "~/Views/Shared/_HandbookLayout.cshtml";
 }
 
-<h2>@Model.ModuleTitle</h2>
+<div id="first_page" class="row-header">
+    <h1>Logo Here</h1>
+    <h2>@Model.Department</h2>
+    <h1>@Model.ModuleTitle</h1>
+    <h2>@Model.Credits</h2>
+    <br/>
+    <h3>Module Handbook</h3>
+    <h3>2015/16</h3>
+    <br/>
+    <br/>
+    <h4>Module leader: @Model.ModuleLeader</h4>
+    <h4><i class="fa fa-phone-square" aria-hidden="true"></i> @Model.ModuleLeaderPhone</h4>
+    <h4><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:@Model.ModuleLeaderEmail">@Model.ModuleLeaderEmail</a></h4>
+    <br/>
+    <br/>
+    <h4>Administrator: <i class="fa fa-phone-square" aria-hidden="true"></i> @Model.AdministratorPhone</h4>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.InclusiveServices)</p><br/>
+    @Html.Raw(Model.InclusiveServices)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.ModuleOverview)</p><br/>
+    @Html.Raw(Model.ModuleOverview)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.Advice)</p><br/>
+    @Html.Raw(Model.Advice)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.LearningOutcomes)</p><br/>
+    @Html.Raw(Model.LearningOutcomes)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.OutlineContent)</p><br/>
+    @Html.Raw(Model.OutlineContent)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.VleBlackboard)</p><br/>
+    @Html.Raw(Model.VleBlackboard)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.Assessment)</p><br/>
+    @Html.Raw(Model.Assessment)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.Coursework)</p><br/>
+    @Html.Raw(Model.Coursework)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.ReadingList)</p><br/>
+    @Html.Raw(Model.ReadingList)
+</div>
+
+<div class="row-header">
+    <p class="section-header">@Html.LabelFor(model => model.OtherInfo)</p><br />
+    @Html.Raw(Model.OtherInfo)
+</div>

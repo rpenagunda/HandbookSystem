@@ -10,19 +10,32 @@
         }
 
         .row-header {
-            background: #7F65A0;
-            color: #fff;
             page-break-inside: avoid;
+            margin-bottom: 30px;
         }
 
         .pdf-break {
             visibility: hidden;
         }
+        #first_page {
+            text-align: right;
+        }
+        .section-header {
+            color: #098A60;
+            background-color: #D6E3BC;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+<div class="container body-content">
+    @RenderBody()
+</div>
 </body>
 </html>

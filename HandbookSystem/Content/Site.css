@@ -39,8 +39,9 @@ ul#module-download-list > li {
 }
 
 .module-btn {
+    white-space: normal;
     font-size: 30px;
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     padding: 20px;
 }

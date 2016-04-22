@@ -11,7 +11,10 @@
         @{
             foreach (var module in Model.Modules.Where(x => x.Enabled))
             {
-                <li><a href="@Url.Action("HandbookPdf", "Download", new { id = module.ModuleCode})" class="btn btn-default module-btn">@module.ModuleTitle</a></li>
+                <li>
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})" class="btn btn-warning module-btn">@module.ModuleTitle</a> <br/> <br /> <br />
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new { id = module.ModuleCode})">View</a> | <a href="@Url.Action("HandbookPdf", "Download", new { id = module.ModuleCode})">Download</a>
+                </li>
             }
         }
     </ul>
