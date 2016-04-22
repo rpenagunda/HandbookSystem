@@ -65,6 +65,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Select.HtmlToPdf, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.2.2.0.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -129,6 +133,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Dal\AppDbModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -199,6 +204,7 @@
     <Content Include="Dal\AppDbModel.edmx.diagram">
       <DependentUpon>AppDbModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\Select.Html.dep" />
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <Content Include="Scripts\edit.js" />
     <Content Include="Scripts\jquery-1.12.3.js" />
@@ -230,9 +236,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Lecturer\Edit.cshtml" />
+    <Content Include="Views\Download\Index.cshtml" />
+    <Content Include="Views\Download\HandbookView.cshtml" />
+    <Content Include="Views\Lecturer\Download.cshtml" />
     <None Include="Views\Lecturer\Index.cshtml" />
     <Content Include="Views\Lecturer\List.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
+    <Content Include="Views\Shared\_HandbookLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -275,7 +285,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Select.HtmlToPdf.2.2.0.0\build\Select.HtmlToPdf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Select.HtmlToPdf.2.2.0.0\build\Select.HtmlToPdf.targets'))" />
   </Target>
+  <Import Project="..\packages\Select.HtmlToPdf.2.2.0.0\build\Select.HtmlToPdf.targets" Condition="Exists('..\packages\Select.HtmlToPdf.2.2.0.0\build\Select.HtmlToPdf.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

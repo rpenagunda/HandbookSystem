@@ -30,3 +30,17 @@
     background-image: none;
     border: 1px solid #ccc;
 }
+
+ul#module-download-list > li {
+    float: left;
+    margin-top: 50px;
+    margin-right: 50px;
+    list-style-type: none;
+}
+
+.module-btn {
+    font-size: 30px;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+}

@@ -6,6 +6,7 @@ namespace HandbookSystem.Models
     public class ModuleInfo
     {
         public int ModuleCode { get; set; }
+        public string ModuleTitle { get; set; }
 
         [Display(Name = "Department:")]
         public string Department { get; set; }

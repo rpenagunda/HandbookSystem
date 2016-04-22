@@ -16,7 +16,7 @@ namespace HandbookSystem.Controllers
         }
 
         // GET: Handbook/List/Id
-        public ActionResult List(string id)
+        public ActionResult List()
         {
             // Person model
             var person = Query.PersonInfo();
@@ -41,6 +41,15 @@ namespace HandbookSystem.Controllers
             Query.EditHandbook(moduleInfo);
 
             return View();
+        }
+
+        // POST: Handbook/Download
+        public ActionResult Download(ModuleInfo moduleInfo)
+        {
+            // Person model
+            var person = Query.PersonInfo();
+
+            return View(person);
         }
     }
 }

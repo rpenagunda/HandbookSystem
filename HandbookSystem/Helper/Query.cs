@@ -40,6 +40,7 @@ namespace HandbookSystem.Helper
                                     new ModuleInfo
                                     {
                                         ModuleCode = x.ModuleCode,
+                                        ModuleTitle = x.ModuleTitle,
                                         Department = x.Department,
                                         Credits = x.Credits,
                                         Coursework = x.Coursework,

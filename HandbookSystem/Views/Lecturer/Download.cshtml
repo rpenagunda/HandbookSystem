@@ -1,0 +1,18 @@
+﻿@model HandbookSystem.Dal.Person
+
+@{
+    ViewBag.Title = "Download Handbook";
+}
+
+<div class="col-md-12">
+    <h2>@ViewBag.Title</h2>
+
+    <ul id="module-download-list">
+        @{
+            foreach (var module in Model.Modules.Where(x => x.Enabled))
+            {
+                <li><a href="@Url.Action("HandbookPdf", "Download", new { id = module.ModuleCode})" class="btn btn-default module-btn">@module.ModuleTitle</a></li>
+            }
+        }
+    </ul>
+</div>
