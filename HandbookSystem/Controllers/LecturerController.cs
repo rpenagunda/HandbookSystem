@@ -6,7 +6,7 @@ namespace HandbookSystem.Controllers
 {
     public class LecturerController : Controller
     {
-        // GET: Handbook
+        // GET: Lecturer
         public ActionResult Index()
         {
             // Person model
@@ -15,7 +15,7 @@ namespace HandbookSystem.Controllers
             return View(person);
         }
 
-        // GET: Handbook/List/Id
+        // GET: Lecturer/List/Id
         public ActionResult List()
         {
             // Person model
@@ -24,7 +24,7 @@ namespace HandbookSystem.Controllers
             return View(person);
         }
 
-        // GET: Handbook/Edit/Id
+        // GET: Lecturer/Edit/Id
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -33,7 +33,7 @@ namespace HandbookSystem.Controllers
             return View(module);
         }
 
-        // POST: Handbook/Edit/Id
+        // POST: Lecturer/Edit/Id
         [HttpPost]
         public ActionResult Edit(ModuleInfo moduleInfo)
         {
@@ -43,7 +43,7 @@ namespace HandbookSystem.Controllers
             return RedirectToAction("List");
         }
 
-        // POST: Handbook/Download
+        // POST: Lecturer/Download
         public ActionResult Download(ModuleInfo moduleInfo)
         {
             // Person model

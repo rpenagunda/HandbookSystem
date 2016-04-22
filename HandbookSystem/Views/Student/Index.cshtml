@@ -11,7 +11,7 @@
         <div class="panel-body">
             <h3><strong>@Model.Role Info</strong></h3>
             <h4><strong>Name:</strong> @Model.LastName, @Model.FirstName</h4>
-            <h4><strong>Contact Number: </strong> @Model.ContactNo</h4>
+            <h4><strong>Course: </strong> @Model.Course</h4>
             <h4><strong>Modules:</strong></h4>
             <ul>
                 @{
@@ -26,10 +26,15 @@
     <div class="col-md-2"></div>
     <div class="panel panel-default col-md-5">
         <div class="panel-body">
-            <h3><strong>Module Handbooks:</strong></h3>
-            <a href="@Url.Action("Download", "Lecturer")"><h4>Download My Handbooks</h4></a><br />
-            <a href="@Url.Action("List", "Lecturer")"><h4>Edit My Handbooks</h4></a><br />
-            <a href="#"><h4>View All Handbooks</h4></a><br />
+            <h3><strong>Download Module Handbooks:</strong></h3>
+            <ul>
+                @{
+                    foreach (var module in Model.Modules.Where(x => x.Enabled))
+                    {
+                        <li><h4>@module.ModuleTitle</h4> <a class="btn btn-info" target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})">View</a> <a class="btn btn-info" href="@Url.Action("HandbookPdf", "Download", new {id = module.ModuleCode})">Download</a></li>
+                    }
+                }
+            </ul>
         </div>
     </div>
 </div>

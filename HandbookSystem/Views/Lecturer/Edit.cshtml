@@ -7,9 +7,12 @@
 }
 
 <div class="col-md-12">
-    <h2>@ViewBag.Title</h2>
+    <div class="alert alert-info" role="alert">
+        <h2>@ViewBag.Title</h2>
+    </div>
+
     <!-- START FORM -->
-    @using (Html.BeginForm("Edit", "Lecturer", FormMethod.Post, new { role = "form", id = "frm_handbook" }))
+    @using (Html.BeginForm("Edit", "Lecturer", FormMethod.Post, new {role = "form", id = "frm_handbook"}))
     {
         @Html.AntiForgeryToken()
 
@@ -23,7 +26,7 @@
                 <!-- PUBLISH -->
                 <div class="form-group">
                     @Html.LabelFor(model => model.Enabled)
-                    @Html.DropDownListFor(model => model.Enabled, Extensions.PublishList(), new { @class = "form-control" })
+                    @Html.DropDownListFor(model => model.Enabled, Extensions.PublishList(), new {@class = "form-control"})
                     @Html.ValidationMessageFor(model => model.Enabled)
                 </div>
 
@@ -154,7 +157,8 @@
         <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="submitHandbookForm()">SUBMIT CHANGES</button>
         </p>
 
-        <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '@Url.Action("List", "Lecturer")'">BACK TO HANDBOOK LIST</button></p>
+        <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '@Url.Action("List", "Lecturer")'">BACK TO HANDBOOK LIST</button>
+        </p>
     }
     <!-- END FORM -->
 </div>

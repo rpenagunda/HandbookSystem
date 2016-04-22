@@ -5,15 +5,17 @@
 }
 
 <div class="col-md-12">
-    <h2>@ViewBag.Title</h2>
+    <div class="alert alert-info" role="alert">
+        <h2>@ViewBag.Title</h2>
+    </div>
 
     <ul id="module-download-list">
         @{
             foreach (var module in Model.Modules.Where(x => x.Enabled))
             {
                 <li>
-                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})" class="btn btn-warning module-btn">@module.ModuleTitle</a> <br/> <br /> <br />
-                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new { id = module.ModuleCode})">View</a> | <a href="@Url.Action("HandbookPdf", "Download", new { id = module.ModuleCode})">Download</a>
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})" class="btn btn-warning module-btn">@module.ModuleTitle</a> <br/> <br/> <br/>
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})">View</a> | <a href="@Url.Action("HandbookPdf", "Download", new {id = module.ModuleCode})">Download</a>
                 </li>
             }
         }

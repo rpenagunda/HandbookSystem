@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Dal\AppDbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +174,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\logo-opaque.jpg" />
+    <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\images\uni-logo.png" />
     <Content Include="Dal\AppDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AppDbModel.edmx</DependentUpon>
@@ -243,6 +247,7 @@
     <Content Include="Views\Lecturer\List.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\Shared\_HandbookLayout.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
