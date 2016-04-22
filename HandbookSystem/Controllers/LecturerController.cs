@@ -40,7 +40,7 @@ namespace HandbookSystem.Controllers
             // Save changes to the handbook
             Query.EditHandbook(moduleInfo);
 
-            return View();
+            return RedirectToAction("List");
         }
 
         // POST: Handbook/Download

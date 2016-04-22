@@ -9,7 +9,7 @@
 <div class="col-md-12">
     <h2>@ViewBag.Title</h2>
     <!-- START FORM -->
-    @using (Html.BeginForm("Edit", "Lecturer", FormMethod.Post, new { @role = "form", @id = "frm_handbook" }))
+    @using (Html.BeginForm("Edit", "Lecturer", FormMethod.Post, new { role = "form", id = "frm_handbook" }))
     {
         @Html.AntiForgeryToken()
 
@@ -20,6 +20,13 @@
                     @Html.ValidationSummary(false)
                 </div>*@
             <div>
+                <!-- PUBLISH -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Enabled)
+                    @Html.DropDownListFor(model => model.Enabled, Extensions.PublishList(), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Enabled)
+                </div>
+
                 <!-- DEPARTMENT -->
                 <div class="form-group">
                     @Html.LabelFor(model => model.Department)

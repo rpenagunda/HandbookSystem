@@ -8,6 +8,9 @@ namespace HandbookSystem.Models
         public int ModuleCode { get; set; }
         public string ModuleTitle { get; set; }
 
+        [Display(Name = "Publish Handbook:")]
+        public string Enabled { get; set; }
+
         [Display(Name = "Department:")]
         public string Department { get; set; }
 

@@ -41,6 +41,7 @@ namespace HandbookSystem.Helper
                                     {
                                         ModuleCode = x.ModuleCode,
                                         ModuleTitle = x.ModuleTitle,
+                                        Enabled = x.Enabled.ToString(),
                                         Department = x.Department,
                                         Credits = x.Credits,
                                         Coursework = x.Coursework,
@@ -80,6 +81,7 @@ namespace HandbookSystem.Helper
                     var module = db.Modules.Find(mi.ModuleCode);
 
                     // Map the data/fields
+                    module.Enabled = mi.Enabled == "True";
                     module.ModuleLeader = mi.ModuleLeader;
                     module.ModuleLeaderEmail = mi.ModuleLeaderEmail;
                     module.AdministratorPhone = mi.AdministratorPhone;

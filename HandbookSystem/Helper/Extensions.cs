@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace HandbookSystem.Helper
 {
@@ -23,6 +25,19 @@ namespace HandbookSystem.Helper
                                                 "</div>" +
                                             "</div></div>" +
                                         "</div>");
+        }
+
+        // Return values of publish dropdown list
+        public static List<SelectListItem> PublishList()
+        {
+            // SelectListItem
+            var items = new List<SelectListItem>
+            {
+                new SelectListItem {Text = "Yes", Value = "True"},
+                new SelectListItem {Text = "No", Value = "False"}
+            };
+
+            return items;
         }
     }
 }
