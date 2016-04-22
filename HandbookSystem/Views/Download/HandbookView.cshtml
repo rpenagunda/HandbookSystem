@@ -28,52 +28,102 @@
     <br/>
 </div>
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.InclusiveServices)</p><br/>
-    @Html.Raw(Model.InclusiveServices)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.InclusiveServices))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.InclusiveServices)</p><br />
+            @Html.Raw(Model.InclusiveServices)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.ModuleOverview)</p><br/>
-    @Html.Raw(Model.ModuleOverview)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.ModuleOverview))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.ModuleOverview)</p><br />
+            @Html.Raw(Model.ModuleOverview)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.Advice)</p><br/>
-    @Html.Raw(Model.Advice)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.Advice))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.Advice)</p><br />
+            @Html.Raw(Model.Advice)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.LearningOutcomes)</p><br/>
-    @Html.Raw(Model.LearningOutcomes)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.LearningOutcomes))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.LearningOutcomes)</p><br />
+            @Html.Raw(Model.LearningOutcomes)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.OutlineContent)</p><br/>
-    @Html.Raw(Model.OutlineContent)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.OutlineContent))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.OutlineContent)</p><br />
+            @Html.Raw(Model.OutlineContent)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.VleBlackboard)</p><br/>
-    @Html.Raw(Model.VleBlackboard)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.VleBlackboard))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.VleBlackboard)</p><br />
+            @Html.Raw(Model.VleBlackboard)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.Assessment)</p><br/>
-    @Html.Raw(Model.Assessment)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.Assessment))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.Assessment)</p><br />
+            @Html.Raw(Model.Assessment)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.Coursework)</p><br/>
-    @Html.Raw(Model.Coursework)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.Coursework))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.Coursework)</p><br />
+            @Html.Raw(Model.Coursework)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.ReadingList)</p><br/>
-    @Html.Raw(Model.ReadingList)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.ReadingList))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.ReadingList)</p><br />
+            @Html.Raw(Model.ReadingList)
+        </div>
+    }
+}
 
-<div class="row-header">
-    <p class="section-header">@Html.LabelFor(model => model.OtherInfo)</p><br />
-    @Html.Raw(Model.OtherInfo)
-</div>
+@{
+    if (!string.IsNullOrWhiteSpace(Model.OtherInfo))
+    {
+        <div class="row-header">
+            <p class="section-header">@Html.LabelFor(model => model.OtherInfo)</p><br />
+            @Html.Raw(Model.OtherInfo)
+        </div>
+    }
+}

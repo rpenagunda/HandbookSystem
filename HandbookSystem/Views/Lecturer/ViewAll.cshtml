@@ -1,0 +1,23 @@
+﻿@model List<HandbookSystem.Models.ModuleInfo>
+
+@{
+    ViewBag.Title = "Download Handbook";
+}
+
+<div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+        <h2>@ViewBag.Title</h2>
+    </div>
+
+    <ul id="module-download-list">
+        @{
+            foreach (var module in Model.ToList())
+            {
+                <li>
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})" class="btn btn-warning module-btn">@module.ModuleTitle</a> <br /> <br /> <br />
+                    <a target="_blank" href="@Url.Action("HandbookView", "Download", new {id = module.ModuleCode})">View</a> | <a href="@Url.Action("HandbookPdf", "Download", new {id = module.ModuleCode})">Download</a>
+                </li>
+            }
+        }
+    </ul>
+</div>

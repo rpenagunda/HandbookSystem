@@ -56,3 +56,11 @@ ul#module-download-list > li {
     color: #fff !important;
     font-size: 30px;
 }
+
+.alert {
+    padding: 0 !important;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}

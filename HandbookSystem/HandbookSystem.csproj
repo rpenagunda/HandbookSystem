@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Dal\AppDbModel.Context.cs">
@@ -243,11 +244,13 @@
     <Content Include="Views\Download\Index.cshtml" />
     <Content Include="Views\Download\HandbookView.cshtml" />
     <Content Include="Views\Lecturer\Download.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Lecturer\Index.cshtml" />
     <Content Include="Views\Lecturer\List.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\Shared\_HandbookLayout.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <None Include="Views\Lecturer\ViewAll.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

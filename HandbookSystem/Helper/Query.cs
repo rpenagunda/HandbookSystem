@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using HandbookSystem.Dal;
 using HandbookSystem.Models;
@@ -102,6 +103,49 @@ namespace HandbookSystem.Helper
 
                     // Save changes
                     db.SaveChanges();
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Method to return all modules that were enabled
+        public static List<ModuleInfo> AllModules()
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Return module info for the given module code
+                    return
+                        db.Modules.Where(x => x.Enabled).Select(
+                                x =>
+                                    new ModuleInfo
+                                    {
+                                        ModuleCode = x.ModuleCode,
+                                        ModuleTitle = x.ModuleTitle,
+                                        Enabled = x.Enabled.ToString(),
+                                        Department = x.Department,
+                                        Credits = x.Credits,
+                                        Coursework = x.Coursework,
+                                        VleBlackboard = x.VleBlackboard,
+                                        ModuleRoom = x.ModuleRoom,
+                                        ModuleLeader = x.ModuleLeader,
+                                        ModuleLeaderEmail = x.ModuleLeaderEmail,
+                                        Advice = x.Advice,
+                                        ModuleLeaderPhone = x.ModuleLeaderPhone,
+                                        AdministratorPhone = x.AdministratorPhone,
+                                        Assessment = x.Assessment,
+                                        ReadingList = x.ReadingList,
+                                        ModuleOverview = x.ModuleOverview,
+                                        LearningOutcomes = x.LearningOutcomes,
+                                        InclusiveServices = x.InclusiveServices,
+                                        OutlineContent = x.OutlineContent,
+                                        OtherInfo = x.OtherInfo
+                                    }).ToList();
                 }
             }
             catch

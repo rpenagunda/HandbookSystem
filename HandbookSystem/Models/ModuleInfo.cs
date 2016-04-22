@@ -9,27 +9,35 @@ namespace HandbookSystem.Models
         public string ModuleTitle { get; set; }
 
         [Display(Name = "Publish Handbook:")]
+        [Required]
         public string Enabled { get; set; }
 
         [Display(Name = "Department:")]
+        [Required]
         public string Department { get; set; }
 
         [Display(Name = "Credits:")]
+        [Required]
         public string Credits { get; set; }
 
         [Display(Name = "Module Leader:")]
+        [Required]
         public string ModuleLeader { get; set; }
 
         [Display(Name = "Module Leader Phone Number:")]
+        [Required]
         public string ModuleLeaderPhone { get; set; }
 
         [Display(Name = "Room:")]
+        [Required]
         public string ModuleRoom { get; set; }
 
         [Display(Name = "Module Leader Email Address:")]
+        [Required]
         public string ModuleLeaderEmail { get; set; }
 
         [Display(Name = "Administrator Phone Number:")]
+        [Required]
         public string AdministratorPhone { get; set; }
 
         [AllowHtml]

@@ -43,13 +43,22 @@ namespace HandbookSystem.Controllers
             return RedirectToAction("List");
         }
 
-        // POST: Lecturer/Download
+        // GET: Lecturer/Download
         public ActionResult Download(ModuleInfo moduleInfo)
         {
             // Person model
             var person = Query.PersonInfo();
 
             return View(person);
+        }
+
+        // GET: Lecturer/ViewAll
+        public ActionResult ViewAll()
+        {
+            // Get all the modules
+            var modulesList = Query.AllModules();
+
+            return View(modulesList);
         }
     }
 }
