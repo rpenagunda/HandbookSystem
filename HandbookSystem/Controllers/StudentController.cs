@@ -3,6 +3,7 @@ using HandbookSystem.Helper;
 
 namespace HandbookSystem.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         // GET: Student

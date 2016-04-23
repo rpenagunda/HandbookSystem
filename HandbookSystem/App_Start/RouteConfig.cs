@@ -14,6 +14,9 @@ namespace HandbookSystem
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            // Set routes url to lowercase
+            routes.LowercaseUrls = true;
         }
     }
 }

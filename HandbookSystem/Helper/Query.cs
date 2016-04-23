@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using HandbookSystem.Dal;
 using HandbookSystem.Models;
 
@@ -16,7 +17,7 @@ namespace HandbookSystem.Helper
                 using (var db = new AppDbEntities())
                 {
                     // Return person info for the given ID
-                    return db.People.Include("Modules").Single(x => x.UserName == Extensions.Username);
+                    return db.People.Include("Modules").Single(x => x.UserName == HttpContext.Current.User.Identity.Name);
                 }
             }
             catch
@@ -147,6 +148,69 @@ namespace HandbookSystem.Helper
                                         OtherInfo = x.OtherInfo
                                     }).ToList();
                 }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Get roles for the specific user
+        public static string[] GetRoles(string username)
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Return role(s) for given username
+                    return
+                        db.People.Where(x => x.UserName == username).Select(x => new[] { x.Role }).Single();
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Get roles for the specific user
+        public static string GetRole(string username)
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Return role for given username
+                    return
+                        db.People.Where(x => x.UserName == username).Select(x => x.Role).Single();
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Check if the username and password match
+        public static bool IsLoginValid(LoginModel login)
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Check if the username and password combination exist in the database
+                    var result = db.People.Where(x => x.UserName == login.UserName && x.Password == login.Password);
+
+                    if (result.Count() == 1)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
             }
             catch
             {

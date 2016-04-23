@@ -1,8 +1,7 @@
-﻿body {
-    padding-bottom: 20px;
-}
+﻿body { padding-bottom: 20px; }
 
 /* Set padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -11,44 +10,44 @@
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
-    white-space: normal;
-}
+
+.dl-horizontal dt { white-space: normal; }
 
 /** GLOBAL STYLE **/
+
 .form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    line-height: 1.42857;
-    color: #555;
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    width: 100%;
 }
 
 ul#module-download-list > li {
     float: left;
-    margin-top: 50px;
-    margin-right: 50px;
     list-style-type: none;
+    margin-right: 50px;
+    margin-top: 50px;
 }
 
 .module-btn {
-    white-space: normal;
     font-size: 30px;
-    width: 200px;
     height: 300px;
     padding: 20px;
+    white-space: normal;
+    width: 200px;
 }
 
 #layout-header {
     -ms-border-radius: 25px;
-    border-radius: 25px;
     background-color: #052561;
+    border-radius: 25px;
     height: 150px;
 }
 
@@ -57,10 +56,29 @@ ul#module-download-list > li {
     font-size: 30px;
 }
 
-.alert {
-    padding: 0 !important;
+.alert { padding: 0 !important; }
+
+.field-validation-error { color: #ff0000; }
+
+.navbar-header { padding: 20px; }
+
+#body_login {
+    background: rgba(217, 233, 206, 1);
+    background: -moz-linear-gradient(top, rgba(217, 233, 206, 1) 0%, rgba(194, 222, 174, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(217, 233, 206, 1)), color-stop(100%, rgba(194, 222, 174, 1)));
+    background: -webkit-linear-gradient(top, rgba(217, 233, 206, 1) 0%, rgba(194, 222, 174, 1) 100%);
+    background: -o-linear-gradient(top, rgba(217, 233, 206, 1) 0%, rgba(194, 222, 174, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(217, 233, 206, 1) 0%, rgba(194, 222, 174, 1) 100%);
+    background: linear-gradient(to bottom, rgba(217, 233, 206, 1) 0%, rgba(194, 222, 174, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9e9ce', endColorstr='#c2deae', GradientType=0);
 }
 
-.field-validation-error {
-    color: #ff0000;
+#outer {
+  width: 100%;
+  text-align: center;
+}
+
+#inner {
+  width: 50%;
+  display: inline-block;
 }

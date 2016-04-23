@@ -133,6 +133,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
@@ -162,7 +163,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="Helper\MyRoleProvider.cs" />
     <Compile Include="Helper\Query.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ModuleInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,6 +247,7 @@
     <Content Include="Views\Download\Index.cshtml" />
     <Content Include="Views\Download\HandbookView.cshtml" />
     <Content Include="Views\Lecturer\Download.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Lecturer\Index.cshtml" />
     <Content Include="Views\Lecturer\List.cshtml" />
@@ -251,6 +255,7 @@
     <Content Include="Views\Shared\_HandbookLayout.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <None Include="Views\Lecturer\ViewAll.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -5,9 +5,6 @@ namespace HandbookSystem.Helper
 {
     public static class Extensions
     {
-        //public static string Username = "jane_doe";
-        public static string Username = "joe_bloggs";
-
         // Helper method to generate the modal dialog components 
         public static MvcHtmlString GenerateModalDialog(this HtmlHelper helper, string modalId, string modalBody, string modalHeader = null, string modalFooter = null, string modalButton = null)
         {

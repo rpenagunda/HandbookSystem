@@ -4,6 +4,7 @@ using HandbookSystem.Models;
 
 namespace HandbookSystem.Controllers
 {
+    [Authorize]
     public class LecturerController : Controller
     {
         // GET: Lecturer
