@@ -3,7 +3,7 @@ using HandbookSystem.Helper;
 
 namespace HandbookSystem.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Student")]
     public class StudentController : Controller
     {
         // GET: Student

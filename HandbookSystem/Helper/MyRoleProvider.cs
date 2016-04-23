@@ -44,7 +44,7 @@ namespace HandbookSystem.Helper
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            return Query.IsUserRole(username, roleName);
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)

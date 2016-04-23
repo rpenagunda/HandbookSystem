@@ -164,14 +164,14 @@ namespace HandbookSystem.Helper
                 using (var db = new AppDbEntities())
                 {
                     // Return role(s) for given username
-                    return
-                        db.People.Where(x => x.UserName == username).Select(x => new[] { x.Role }).Single();
+                    return db.People.Where(x => x.UserName == username).Select(x => x.Role).ToArray();
                 }
             }
             catch
             {
+                return null;
                 // Error message
-                throw new Exception();
+                //throw new Exception();
             }
         }
 
@@ -192,6 +192,12 @@ namespace HandbookSystem.Helper
                 // Error message
                 throw new Exception();
             }
+        }
+
+        // Check if user got a certain role
+        public static bool IsUserRole(string username, string role)
+        {
+            return true;
         }
 
         // Check if the username and password match

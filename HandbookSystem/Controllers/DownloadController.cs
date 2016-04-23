@@ -6,6 +6,7 @@ using SelectPdf;
 
 namespace HandbookSystem.Controllers
 {
+    [Authorize(Roles = "Lecturer, Student")]
     public class DownloadController : Controller
     {
         // GET: Download

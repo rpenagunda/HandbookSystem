@@ -4,7 +4,7 @@ using HandbookSystem.Models;
 
 namespace HandbookSystem.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Lecturer")]
     public class LecturerController : Controller
     {
         // GET: Lecturer
