@@ -36,5 +36,19 @@ namespace HandbookSystem.Helper
 
             return items;
         }
+
+        // Return values of roles dropdown list
+        public static List<SelectListItem> RolesList()
+        {
+            // SelectListItem
+            var items = new List<SelectListItem>
+            {
+                new SelectListItem {Text = "Lecturer", Value = "Lecturer"},
+                new SelectListItem {Text = "Student", Value = "Student"},
+                new SelectListItem {Text = "Admin", Value = "Admin"}
+            };
+
+            return items;
+        }
     }
 }

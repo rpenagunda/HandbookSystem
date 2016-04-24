@@ -1,0 +1,99 @@
+﻿@using HandbookSystem.Helper
+
+@model HandbookSystem.Dal.Person
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+        <h2>@ViewBag.Title</h2>
+    </div>
+
+    <!-- START FORM -->
+    @using (Html.BeginForm("EditUsers", "Admin", FormMethod.Post, new { role = "form", id = "frm_edituser" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            <legend class="h4">Fill in the information edit info of the User:</legend>
+            <!-- VALIDATION SUMMARY -->
+            @*<div class="form-group h4">
+                    @Html.ValidationSummary(false)
+                </div>*@
+            <div>
+                <!-- FIRST NAME -->
+                <div class="form-group">
+                    @Html.Label("First Name:")
+                    @Html.TextBoxFor(model => model.FirstName, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+
+                <!-- LAST NAME -->
+                <div class="form-group">
+                    @Html.Label("Last Name:")
+                    @Html.TextBoxFor(model => model.LastName, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+
+                <!-- COURSE -->
+                <div class="form-group">
+                    @Html.Label("Course:")
+                    @Html.TextBoxFor(model => model.Course, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.Course)
+                </div>
+
+                <!-- CONTACT NO -->
+                <div class="form-group">
+                    @Html.Label("Contact Number:")
+                    @Html.TextBoxFor(model => model.ContactNo, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.ContactNo)
+                </div>
+
+                <!-- USERNAME -->
+                <div class="form-group">
+                    @Html.Label("Username:")
+                    @Html.TextBoxFor(model => model.UserName, new {@class = "form-control val-autocomplete-off"})
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    @Html.Label("Password:")
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control val-autocomplete-off" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+
+                <!-- ROLE -->
+                <div class="form-group">
+                    @Html.Label("Role:")
+                    @Html.DropDownListFor(model => model.Role, Extensions.RolesList(), new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Role)
+                </div>
+
+                <!-- HIDDEN PERSON ID -->
+                @Html.HiddenFor(model => model.PersonId)
+            </div>
+        </fieldset>
+
+        <p>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="submitHandbookForm()">SUBMIT CHANGES</button>
+        </p>
+
+        <p>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '@Url.Action("Users", "Admin")'">BACK TO HANDBOOK LIST</button>
+        </p>
+    }
+    <!-- END FORM -->
+</div>
+
+<!-- START MODAL DIALOG -->
+@Html.GenerateModalDialog("modal_edituser_overlay", "<h3></h3>" +
+                                                "<h3>Submitting the changes..</h3>", null, "<p></p>")
+<!-- END MODAL DIALOG -->
+
+@section scripts {
+    <script src="@Url.Content("~/Scripts/Site.js")"></script>
+    <script src="@Url.Content("~/Scripts/admin.js")"></script>
+}

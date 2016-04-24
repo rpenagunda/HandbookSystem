@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using HandbookSystem.Dal;
+using HandbookSystem.Helper;
 
 namespace HandbookSystem.Controllers
 {
@@ -11,16 +13,39 @@ namespace HandbookSystem.Controllers
             return View();
         }
 
-        // GET: Modules
+        // GET: Admin/Modules
         public ActionResult Modules()
         {
             return View();
         }
 
-        // GET: Users
+        // GET: Admin/Users
         public ActionResult Users()
         {
-            return View();
+            // Person model
+            var allUsers = Query.AllUsers();
+
+            return View(allUsers);
+        }
+
+        // GET: Admin/EditUsers
+        [HttpGet]
+        public ActionResult EditUsers(int id)
+        {
+            // Person model
+            var person = Query.PersonInfo(id);
+
+            return View(person);
+        }
+
+        // POST: Lecturer/EditUsers/Id
+        [HttpPost]
+        public ActionResult EditUsers(Person person)
+        {
+            // Save changes to the user
+            Query.EditUsers(person);
+
+            return RedirectToAction("Users");
         }
 
         // GET: UserModules

@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="admin.js" />
 /// <reference path="bootstrap.min.js" />
 /// <reference path="edit.js" />
 /// <reference path="jquery.validate.min.js" />

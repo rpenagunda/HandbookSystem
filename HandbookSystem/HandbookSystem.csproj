@@ -204,6 +204,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Dal\AppDbModel.edmx">
@@ -249,6 +250,7 @@
     <Content Include="Views\Download\HandbookView.cshtml" />
     <Content Include="Views\Lecturer\Download.cshtml" />
     <None Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Admin\EditUsers.cshtml" />
     <None Include="Views\Admin\Index.cshtml" />
     <None Include="Views\Admin\Modules.cshtml" />
     <None Include="Views\Admin\UserModules.cshtml" />

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<HandbookSystem.Dal.Person>
+
+@{
     ViewBag.Title = "Admin Section - Users";
 }
 
@@ -6,5 +8,42 @@
     <div class="alert alert-info" role="alert">
         <h2>@ViewBag.Title</h2>
     </div>
-    
+
+    <table class="table-bordered table-condensed table-hover table-striped">
+        <thead>
+        <tr>
+            <th>UserID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course</th>
+            <th>Contact No</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var person in Model)
+                {
+                    <tr>
+                        <td>@person.PersonId</td>
+                        <td>@person.FirstName</td>
+                        <td>@person.LastName</td>
+                        <td>@person.Course</td>
+                        <td>@person.ContactNo</td>
+                        <td>@person.UserName</td>
+                        <td>@person.Role</td>
+                        <td>
+                            <a href="@Url.Action("EditUsers", "Admin", new {id = person.PersonId})">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '@Url.Action("Index", "Lecturer")'">CREATE NEW USER</button></p>
+    <p><button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '@Url.Action("Index", "Admin")'">BACK TO ADMIN HOMEPAGE</button></p>
 </div>

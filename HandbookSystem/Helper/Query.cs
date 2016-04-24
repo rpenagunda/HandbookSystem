@@ -28,6 +28,54 @@ namespace HandbookSystem.Helper
         }
 
         // Comment
+        public static Person PersonInfo(int id)
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Return person info for the given ID
+                    return db.People.Include("Modules").Single(x => x.PersonId == id);
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Comment
+        public static void EditUsers(Person p)
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Find the person
+                    var person = db.People.Find(p.PersonId);
+
+                    // Map the data/fields
+                    person.ContactNo = p.ContactNo;
+                    person.Course = p.Course;
+                    person.FirstName = p.FirstName;
+                    person.LastName = p.LastName;
+                    person.Password = p.Password;
+                    person.Role = p.Role;
+                    person.UserName = p.UserName;
+
+                    // Save changes
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+        // Comment
         public static ModuleInfo ModuleInfo(int moduleCode)
         {
             try
@@ -147,6 +195,25 @@ namespace HandbookSystem.Helper
                                         OutlineContent = x.OutlineContent,
                                         OtherInfo = x.OtherInfo
                                     }).ToList();
+                }
+            }
+            catch
+            {
+                // Error message
+                throw new Exception();
+            }
+        }
+
+
+        // Method to return all users/person/people from the database
+        public static List<Person> AllUsers()
+        {
+            try
+            {
+                using (var db = new AppDbEntities())
+                {
+                    // Return all users
+                    return db.People.ToList();
                 }
             }
             catch
