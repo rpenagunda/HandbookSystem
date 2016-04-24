@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
@@ -248,6 +249,10 @@
     <Content Include="Views\Download\HandbookView.cshtml" />
     <Content Include="Views\Lecturer\Download.cshtml" />
     <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Admin\Index.cshtml" />
+    <None Include="Views\Admin\Modules.cshtml" />
+    <None Include="Views\Admin\UserModules.cshtml" />
+    <None Include="Views\Admin\Users.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Lecturer\Index.cshtml" />
     <Content Include="Views\Lecturer\List.cshtml" />

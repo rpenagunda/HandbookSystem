@@ -6,10 +6,10 @@ using SelectPdf;
 
 namespace HandbookSystem.Controllers
 {
-    [Authorize(Roles = "Lecturer, Student")]
     public class DownloadController : Controller
     {
         // GET: Download
+        [Authorize(Roles = "Lecturer, Student")]
         public ActionResult Index()
         {
             return View();
@@ -24,6 +24,7 @@ namespace HandbookSystem.Controllers
         }
 
         // Method to call the pdf generation package (SelectPdf)
+        [Authorize(Roles = "Lecturer, Student")]
         public ActionResult HandbookPdf(int id)
         {
             // Get the module info for the given ID
